@@ -1,15 +1,19 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import IconRubenDuck from "@/components/icons/IconRubenDuck.vue";
+
+export default defineComponent({
+  components: { IconRubenDuck },
+});
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="d-flex justify-center">
+    <div>
+      <div class="w-100 text-center"><IconRubenDuck /></div>
+      <h1 class="title__userPage title__userPage--space">Username</h1>
+    </div>
+  </main>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
