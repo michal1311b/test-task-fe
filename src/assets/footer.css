@@ -1,0 +1,17 @@
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 120px;
+  background-color: var(--vt-c-black);
+}
+
+.footer__text {
+  color: var(--vt-c-white);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  box-shadow: 0px -12px 36px rgba(0, 0, 0, 0.25);
+  padding: 21px 0 0 0;
+}
