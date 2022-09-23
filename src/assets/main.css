@@ -20,7 +20,7 @@ a,
 
 @media (hover: hover) {
   .link:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    text-decoration: underline;
   }
 }
 
@@ -32,7 +32,7 @@ main {
 }
 
 .main__container {
-  padding: 20px 48px;
+  padding: 70px 48px;
 }
 
 .title__mainPage {
@@ -58,6 +58,10 @@ main {
   font-size: 20px;
   font-weight: 800;
   line-height: 23px;
+}
+
+.title__userAvatar:hover {
+  text-decoration: underline;
 }
 
 .title__userPage--space {
@@ -133,6 +137,17 @@ main {
   list-style: none;
   padding-left: 0;
   width: 100px;
+}
+
+.stats__link {
+  color: var(--vt-c-dark);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.stats__link:hover {
+  color: var(--vt-c-text-link);
+  text-decoration: underline;
 }
 
 li {

@@ -21,9 +21,13 @@ export default defineComponent({
       <h1 class="title__userAvatar title__userAvatar--space">
         {{ user.login }}
       </h1>
-      <a :href="user.html_url" target="_blank"><IconAnchor /> github</a>
     </div>
   </RouterLink>
+  <div class="text-center">
+    <a :href="user.html_url" target="_blank" class="link"
+      ><IconAnchor /> github</a
+    >
+  </div>
 </template>
 
 <style></style>
