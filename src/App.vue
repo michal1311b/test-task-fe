@@ -16,7 +16,7 @@ import SearchBox from "./components/SearchBox.vue";
     <div class="d-flex align-center"><SearchBox /></div>
   </header>
 
-  <RouterView />
+  <RouterView class="main__container" />
 
   <SiteFooter />
 </template>
