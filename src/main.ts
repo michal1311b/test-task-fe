@@ -14,6 +14,7 @@ const store = createStore({
   state() {
     return {
       userList: [],
+      filteredList: [],
       currentUser: null,
       userRepos: [],
     };
@@ -40,16 +41,28 @@ const store = createStore({
         context.commit("SET_USER_REPOS", response);
       }
     },
+    FILTER_USERS_LIST(context, username) {
+      context.commit("SET_FILTER_USERS_LIST", username);
+    },
   },
   mutations: {
     SET_USER_LIST(state, list) {
-      state.userList = list;
+      state.userList = state.filteredList = list;
     },
     SET_USER_DETAILS(state, user) {
       state.currentUser = user;
     },
     SET_USER_REPOS(state, repos) {
       state.userRepos = repos;
+    },
+    SET_FILTER_USERS_LIST(state, username) {
+      if (username.length) {
+        state.filteredList = state.filteredList.filter((user) => {
+          return user.login.includes(username);
+        });
+      } else {
+        state.filteredList = state.userList;
+      }
     },
   },
   getters: {
@@ -61,6 +74,9 @@ const store = createStore({
     },
     GET_USER_REPOS(state) {
       return state.userRepos;
+    },
+    GET_FILTER_USERS_LIST(state) {
+      return state.filteredList;
     },
   },
 });
