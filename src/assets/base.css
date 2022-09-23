@@ -71,6 +71,10 @@ body {
   justify-content: center !important;
 }
 
+.justify-space-between {
+  justify-content: space-between !important;
+}
+
 .w-100 {
   width: 100% !important;
 }
