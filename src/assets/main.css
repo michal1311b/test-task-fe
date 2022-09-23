@@ -75,6 +75,7 @@ main {
 .avatar__container {
   border-radius: 50%;
   background-color: var(--vt-c-text-link);
+  padding: 15px;
 }
 
 .avatar__container--list {
@@ -85,6 +86,7 @@ main {
 .avatar__container--details {
   max-width: 300px;
   max-height: 300px;
+  padding: 25px;
 }
 
 .avatar__image {
