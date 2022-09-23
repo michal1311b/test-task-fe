@@ -67,12 +67,20 @@ body {
   align-items: center !important;
 }
 
+.align-flex-start {
+  align-items: flex-start !important;
+}
+
 .justify-center {
   justify-content: center !important;
 }
 
 .justify-space-between {
   justify-content: space-between !important;
+}
+
+.justify-flex-start {
+  justify-content: flex-start !important;
 }
 
 .w-100 {
@@ -89,4 +97,9 @@ body {
 
 .text-center {
   text-align: center !important;
+}
+
+.backBtn {
+  position: absolute !important;
+  z-index: 2;
 }

@@ -38,7 +38,10 @@ export default defineComponent({
 <template>
   <main class="d-flex justify-center align-center">
     <div v-if="userDetails && !loader" class="w-100">
-      <RouterLink :to="{ name: 'home' }" title="Back to home page"
+      <RouterLink
+        :to="{ name: 'home' }"
+        title="Back to home page"
+        class="backBtn"
         ><IconBackBtn
       /></RouterLink>
       <div class="w-100 d-flex justify-center">
@@ -50,11 +53,14 @@ export default defineComponent({
       <div
         class="row py-1 row--list"
         v-for="(userRepo, index) in userRepos"
-        :key="userRepo.id"
+        :key="index"
       >
-        <div class="column">
-          <a :href="userRepo.html_url" :title="userRepo.name"
-            >Repo {{ index }}</a
+        <div class="column justify-flex-start align-flex-start">
+          <a
+            :href="userRepo.html_url"
+            :title="userRepo.name"
+            class="stats__link"
+            >{{ userRepo.name }}</a
           >
         </div>
         <div class="column column--small">
