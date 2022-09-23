@@ -2,7 +2,11 @@ import { createApp } from "vue";
 import { createStore } from "vuex";
 import App from "./App.vue";
 import router from "./router";
-import { fetchUsers, fetchUserDetails } from "./services/github.service";
+import {
+  fetchUsers,
+  fetchUserDetails,
+  fetchUserRepos,
+} from "./services/github.service";
 
 import "./assets/main.css";
 
@@ -11,6 +15,7 @@ const store = createStore({
     return {
       userList: [],
       currentUser: null,
+      userRepos: [],
     };
   },
   actions: {
@@ -28,6 +33,13 @@ const store = createStore({
         context.commit("SET_USER_DETAILS", response);
       }
     },
+    async FETCH_USER_REPOS(context, username) {
+      const response: any = await fetchUserRepos(username);
+
+      if (response) {
+        context.commit("SET_USER_REPOS", response);
+      }
+    },
   },
   mutations: {
     SET_USER_LIST(state, list) {
@@ -36,6 +48,9 @@ const store = createStore({
     SET_USER_DETAILS(state, user) {
       state.currentUser = user;
     },
+    SET_USER_REPOS(state, repos) {
+      state.userRepos = repos;
+    },
   },
   getters: {
     GET_USER_LIST(state) {
@@ -43,6 +58,9 @@ const store = createStore({
     },
     GET_USER_DETAILS(state) {
       return state.currentUser;
+    },
+    GET_USER_REPOS(state) {
+      return state.userRepos;
     },
   },
 });

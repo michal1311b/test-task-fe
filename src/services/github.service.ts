@@ -9,3 +9,11 @@ export async function fetchUserDetails(username: string) {
 
   return await response.json();
 }
+
+export async function fetchUserRepos(username: string) {
+  const response = await fetch(
+    `https://api.github.com/users/${username}/repos`
+  );
+
+  return await response.json();
+}

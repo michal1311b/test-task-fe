@@ -2,11 +2,20 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  props: { avatarSrc: { type: String, default: "" } },
+  props: {
+    avatarSrc: { type: String, default: "" },
+    list: { type: Boolean, default: true },
+  },
 });
 </script>
 <template>
-  <div class="avatar__container d-flex">
+  <div
+    class="avatar__container d-flex"
+    :class="[
+      { 'avatar__container--list': list },
+      { 'avatar__container--details': !list },
+    ]"
+  >
     <img :src="avatarSrc" v-if="avatarSrc" class="avatar__image" />
     <svg
       v-else
