@@ -58,18 +58,18 @@ export default defineComponent({
           >
         </div>
         <div class="column column--small">
-          <div class="d-flex align-center justify-space-between stats__label">
-            <div class="d-flex align-center">
-              <IconView /> {{ userRepo.watchers_count }}
-            </div>
-          </div>
+          <ul class="stats__container">
+            <li class="stats__label">
+              <IconView class="pl-2" /> {{ userRepo.watchers_count }}
+            </li>
+          </ul>
         </div>
         <div class="column column--small">
-          <div class="d-flex align-center justify-space-between stats__label">
-            <div class="d-flex align-center">
-              <IconStar /> {{ userRepo.stargazers_count }}
-            </div>
-          </div>
+          <ul class="stats__container">
+            <li class="stats__label">
+              <IconStar class="pl-2" /> {{ userRepo.stargazers_count }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
