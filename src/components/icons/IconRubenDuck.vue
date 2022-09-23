@@ -18,6 +18,7 @@ export default defineComponent({
   >
     <img :src="avatarSrc" v-if="avatarSrc" class="avatar__image" />
     <svg
+      class="w-100"
       v-else
       viewBox="0 0 100 100"
       fill="none"
