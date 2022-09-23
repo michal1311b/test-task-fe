@@ -3,3 +3,9 @@ export async function fetchUsers() {
 
   return await response.json();
 }
+
+export async function fetchUserDetails(username: string) {
+  const response = await fetch(`https://api.github.com/users/${username}`);
+
+  return await response.json();
+}
